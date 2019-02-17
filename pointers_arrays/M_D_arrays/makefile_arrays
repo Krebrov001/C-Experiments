@@ -1,0 +1,16 @@
+CXX=g++
+CXXFLAGS=-g -std=c++11
+
+INCLUDE=M_D_arrays.h
+EXECUTABLE=MultiD_Arrays
+
+$(EXECUTABLE) : multidimensional_array_parameters.o M_D_arrays.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+multidimensional_array_parameters.o : multidimensional_array_parameters.cpp $(INCLUDE)
+	$(CXX) $(CXXFLAGS) -c $<
+
+M_D_arrays.o : M_D_arrays.cpp $(INCLUDE)
+	$(CXX) $(CXXFLAGS) -c $<
+
+clean : rm -f $(EXECUTABLE) multidimensional_array_parameters.o M_D_arrays.o

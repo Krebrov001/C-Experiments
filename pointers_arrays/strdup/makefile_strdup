@@ -1,0 +1,11 @@
+strdup_test.out : strdup_test.o strdup.o
+	gcc -g $^ -o $@
+
+strdup_test.o : strdup_test.c strdup.h
+	gcc -g -c $<
+
+strdup.o : strdup.c strdup.h
+	gcc -g -c $<
+
+clean :
+	rm -f strdup_test.out strdup_test.o strdup.o
