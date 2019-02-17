@@ -1,0 +1,61 @@
+Can an object's member function modify another object?
+
+Today's question is, can an object modify another object of the same class type? For example imagine that a class has some private data members. We create two objects of that class type. How can one object modify the other object? Is is legal to do so?
+
+Can we write a member function which gives an object the ability to modify another object of the same class type? This could be useful if an object represents a fighter in a video game, and you want to give one fighter the ability to wound another one.
+
+Turns out that it's possible to do this in C++. We want to understand why C++ gives us the ability to do this. Do do so, we must first understand what a member function actually is and how it works. Read the answer to the question.
+
+------------------------------------------------------------------------------------------------------------------
+
+Here we have a class Bucket with two private data members. There is also a constructor, a copy constructor, and some other functions. Let us turn our attention to modifyOther function. It takes a single parameter, which is a pointer to a Bucket object. Then that member function can edit that other Bucket object.
+
+    modifying_another_object.cpp
+
+In the main() function, we are declaring two objects of class Base type. Notice that they are the same data type. That is important. Then we call object a's modifyOther function to successfully modify the internal private data members of object b.
+
+Here is the output of this code:
+
+x = 10
+y = 5
+
+x = 8
+y = 9
+
+x = 10
+y = 5
+
+x = -1
+y = 1
+
+Now you may be thinking, shouldn't this be illegal? Aren't private data members only allowed to be accessed by the object itself? It turns out that the member access specifiers like private and public are enforced by the compiler, and the compiler has no concept of individual objects, only classes.
+
+private data members are allowed to be accessed by anything inside of their class, allowed to be accessed by the class's member functions. Since modifyOther is a member function of type class Base, it can access the private variables int x and int y and change them. Hence no rule is being violated here.
+
+What is a member function? It is simply a stand alone function which takes an "invisible" pointer to the calling object, and it accesses the object through that pointer. That pointer is called this. Look at the printInfo function. There is a reason why I used this->y to indicate the member variables. Because all member functions take an "invisible" this pointer to the calling object, the function actually looks like:
+
+void printInfo(Bucket* this)
+{
+    cout << "x = " << this->x << endl;
+    cout << "y = " << this->y << endl;
+    cout << endl;
+    // this->x = -1;
+}
+
+Notice that I added the last extra line to this function on purpose. Compare the definition of printInfo function to modifyOther function. They look very similar. In fact the only difference is the name of the Bucket* parameter! Bucket* this is the implicit pointer to the calling object. Bucket* other is just a pointer to some other Bucket object. The compiler is "dumb", it can't tell the difference between these two Bucket *s based on their names alone. It treats them the same! So we can conclude that the same mechanism that is used to modify the calling object can also be used to modify another object of the same class type.
+
+Keep in mind that we cannot use the same trick to pass in a pointer to an object of another class type and modify it. That will not work. A member function has access only to variables that are in the same class! private means that the variable can only be modified by member functions of that particular class, not any other ones. A priavte variable cannot be modified by the outside world, so the outside world also includes any member functions of different classes.
+
+If you don't understand this topic, please look at my similar question on StackOverflow, and also please watch this YouTube video that I found while researching this topic.
+
+
+
+Are there multiple member functions compiled for each C++ object?
+https://stackoverflow.com/questions/53917382/are-there-multiple-member-functions-compiled-for-each-c-object/53917427#53917427
+
+What is the 'this' pointer?
+https://stackoverflow.com/questions/16492736/what-is-the-this-pointer
+
+How this pointer Reaches To Member Function In C++?
+https://www.youtube.com/watch?v=_Wv-lEl1sgg&t=0s
+
