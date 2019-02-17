@@ -1,0 +1,37 @@
+# This makefile is intended to be run as make CXX=gcc -f extern_makefile
+# you can also do the following alternatives to spacify the name
+# of the extern_makefile:
+#
+# make CXX=gcc --file=extern_makefile
+# make CXX=gcc --makefile=extern_makefile
+#
+# Here we are defining the special makefile variable CXX, the name of
+# the compiler, on the command line!
+
+extern_test.out: test1.o test2.o
+	$(CXX) -o $@ $^
+
+test1.o: test1.c
+	$(CXX) -c $<
+
+test2.o: test2.c global_includefile.h
+	$(CXX) -c $<
+
+clean:
+	rm -f test?.o  extern_test.out
+
+# view the translation unit for test2.c
+translation_unit: test2.c global_includefile.h
+	$(CXX) -P -E $<
+
+# displays the contents of all files 
+view_all_files: test1.c test2.c global_includefile.h
+	echo $<
+	cat test1.c
+	echo "-----------------------------------"
+	echo global_includefile.h
+	cat global_includefile.h
+	echo "-----------------------------------"
+	echo test2.c
+	cat test2.c
+	echo "-----------------------------------"

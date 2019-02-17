@@ -1,0 +1,17 @@
+http://www.theunixschool.com/2010/05/how-to-use-extern-variable-in-c.html
+
+https://stackoverflow.com/questions/1433204/how-do-i-use-extern-to-share-variables-between-source-files
+
+https://www.geeksforgeeks.org/understanding-extern-keyword-in-c/
+
+https://www.quora.com/What-is-the-use-of-extern-keyword-in-C++
+
+https://askubuntu.com/questions/724990/what-is-eof-and-how-to-trigger-it
+
+https://www.geeksforgeeks.org/storage-classes-in-c/
+
+https://stackoverflow.com/questions/2841762/why-wont-extern-link-to-a-static-variable?rq=1
+
+https://stackoverflow.com/questions/1041866/what-is-the-effect-of-extern-c-in-c
+
+https://www.geeksforgeeks.org/extern-c-in-c/

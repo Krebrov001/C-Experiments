@@ -1,0 +1,62 @@
+Function declarations/prototypes have no code/instructions associated with them.
+
+Now function definitions are actually where that function is defined.
+A function definition contains the actual code and instructions,
+which are executed when the function is called.
+
+A function declaration/prototype merely helps the compiler recognise valid calls to that
+function, before the actual function is defined in the code.
+This allows us to put the function definitions below main, as long as there is a
+function declaration/prototype above main.
+Function declarations/prototypes are just auxiliary information for the compiler.
+
+A function declaration/prototype without a function definitions == no function, and no code!
+The code of a function IS THE function DEFINITION!
+
+Function declarations are extern by default.
+A function declaration allows us to use a function defined in another translation unit.
+In other words, a function declaration opens up the scope of that function
+into the translation unit which has the declaration.
+
+In the C programming language, it is possible to implicitly call a function that is defined
+in another translation unit, without having a declaration, provided that the program has been linked
+together properly.
+This is called implicit calling of functions. The function call operator is actually an implicit
+declaration of the called function in C.
+The C programming language is naive, and assumes that the programmer knows what they are doing.
+
+C++ does not allow implicit calling of functions.
+In C++, all functions MUST BE DECLARED in the translation unit in which they are used,
+prior to being called.
+
+if functions are implicitly called in the translation unit, gcc generates a warning,
+but does not stop the code from getting compiled and linked.
+However g++ outputs an error, and the compilation/linking (make-ing) process is stopped.
+
+Use the static keyword to limit the scope of a function to the translation unit in which it is defined.
+Other translation units won't be able to see the static function.
+
+What is the use to the static storage class?
+
+- When applied to a local variable inside a function, it makes that local variable have
+  lifetime of the program, but visible only inside of its scope.
+  All recursive function calls share this static variable.
+
+- When applied to a global variable, it restricts the scope of the global variable to only
+  the translation unit in which it was first defined.
+  Other translation units cannot access the global variable.
+
+- When applied to a (global) function, it restricts the scope of that function to only
+  the translation unit in which the function was first defined.
+  Other translation units cannot call the static function.
+
+- When applied to a data member of a class, that data member is shared by all instances
+  of that class. Static data members are initialized before main() is called.
+
+- When applied to a member function of a class, that member function can be called without
+  an instance of the class, however it can only access static data members of the class.
+  It cannot access data members which are bound to (or a part of) their respective objects
+  of that class.
+  Think about it, if the static member function of a class lives outside of any objects,
+  how can it access the data members inside of those individual objects?
+  You want to access this field, out of which object do you want to access it?
