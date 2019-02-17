@@ -1,0 +1,146 @@
+Size of signed char:           1 bytes
+Size of unsigned char:         1 bytes
+Size of char:                  1 bytes
+Size of char pointer:          8 bytes
+
+signed char value -128: -128
+signed char value +127: 127
+signed char value +128: -128
+signed char value -129: 127
+signed char value +129: -127
+
+char value -128: -128
+char value +127: 127
+char value +128: -128
+char value -129: 127
+char value +129: -127
+
+unsigned char value 0: 0
+unsigned char value +255: 255
+unsigned char value -1: 255
+unsigned char value +256: 0
+unsigned char value -2: 254
+unsigned char value +257: 1
+
+Size of signed short int:      2 bytes
+Size of short:                 2 bytes
+Size of unsigned short int:    2 bytes
+Size of unsigned short:        2 bytes
+Size of short int pointer:     8 bytes
+
+signed short int value -32768: -32768
+signed short int value +32767: 32767
+signed short int value +32768: -32768
+signed short int value -32769: 32767
+signed short int value +32769: -32767
+
+short value -32768: -32768
+short value +32767: 32767
+short value +32768: -32768
+short value -32769: 32767
+short value +32769: -32767
+
+unsigned short int value      0: 0
+unsigned short int value +65535: 65535
+unsigned short int value     -1: 65535
+unsigned short int value +65536: 0
+unsigned short int value     -2: 65534
+unsigned short int value +65537: 1
+
+unsigned short value      0: 0
+unsigned short value +65535: 65535
+unsigned short value     -1: 65535
+unsigned short value +65536: 0
+unsigned short value     -2: 65534
+unsigned short value +65537: 1
+
+Size of signed int:            4 bytes
+Size of int:                   4 bytes
+Size of unsigned int:          4 bytes
+Size of unsigned:              4 bytes
+Size of int pointer:           8 bytes
+
+signed int value -2147483648: -2147483648
+signed int value +2147483647: 2147483647
+signed int value +2147483648: -2147483648
+signed int value -2147483649: 2147483647
+signed int value +2147483649: -2147483647
+
+int value -2147483648: -2147483648
+int value +2147483647: 2147483647
+int value +2147483648: -2147483648
+int value -2147483649: 2147483647
+int value +2147483649: -2147483647
+
+unsigned int value           0: 0
+unsigned int value +4294967295: 4294967295
+unsigned int value          -1: 4294967295
+unsigned int value +4294967296: 0
+unsigned int value          -2: 4294967294
+
+unsigned value           0: 0
+unsigned value +4294967295: 4294967295
+unsigned value          -1: 4294967295
+unsigned value +4294967296: 0
+unsigned value          -2: 4294967294
+
+Size of signed long int:       8 bytes
+Size of long:                  8 bytes
+Size of unsigned long int:     8 bytes
+Size of unsigned long:         8 bytes
+Size of long int pointer:      8 bytes
+
+signed long int value -9223372036854775808: -9223372036854775808
+signed long int value +9223372036854775807: 9223372036854775807
+signed long int value +9223372036854775808: -9223372036854775808
+signed long int value -9223372036854775809: 9223372036854775807
+signed long int value +9223372036854775809: -9223372036854775807
+
+long value -9223372036854775808: -9223372036854775808
+long value +9223372036854775807: 9223372036854775807
+long value +9223372036854775808: -9223372036854775808
+long value -9223372036854775809: 9223372036854775807
+long value +9223372036854775809: -9223372036854775807
+
+unsigned long int value                     0: 0
+unsigned long int value +18446744073709551615: 18446744073709551615
+unsigned long int value                    -1: 18446744073709551615
+unsigned long int value +18446744073709551616: 0
+unsigned long int value                    -2: 18446744073709551614
+
+unsigned long value                     0: 0
+unsigned long value +18446744073709551615: 18446744073709551615
+unsigned long value                    -1: 18446744073709551615
+unsigned long value +18446744073709551616: 0
+unsigned long value                    -2: 18446744073709551614
+
+Size of signed long long int:     8 bytes
+Size of long long:                8 bytes
+Size of unsigned long long int:   8 bytes
+Size of unsigned long long:       8 bytes
+Size of long long int pointer:    8 bytes
+
+signed long long int value -9223372036854775808: -9223372036854775808
+signed long long int value +9223372036854775807: 9223372036854775807
+signed long long int value +9223372036854775808: -9223372036854775808
+signed long long int value -9223372036854775809: 9223372036854775807
+signed long long int value +9223372036854775809: -9223372036854775807
+
+long long value -9223372036854775808: -9223372036854775808
+long long value +9223372036854775807: 9223372036854775807
+long long value +9223372036854775808: -9223372036854775808
+long long value -9223372036854775809: 9223372036854775807
+long long value +9223372036854775809: -9223372036854775807
+
+unsigned long long int value                     0: 0
+unsigned long long int value +18446744073709551615: 18446744073709551615
+unsigned long long int value                    -1: 18446744073709551615
+unsigned long long int value +18446744073709551616: 0
+unsigned long long int value                    -2: 18446744073709551614
+
+unsigned long long value                     0: 0
+unsigned long long value +18446744073709551615: 18446744073709551615
+unsigned long long value                    -1: 18446744073709551615
+unsigned long long value +18446744073709551616: 0
+unsigned long long value                    -2: 18446744073709551614
+

@@ -1,0 +1,16 @@
+CXXFLAGS=-std=c++11
+CFLAGS=-std=c99
+FLAGS=-g
+HDR_FILES=toBinary.h
+
+ASCII_table: ascii_table.o toBinary.o
+	g++ $(CXXFLAGS) $(FLAGS) -o $@ $^
+
+ascii_table.o: ascii_table.c $(HDR_FILES)
+	gcc $(FLAGS) -c $<
+
+toBinary.o: toBinary.cpp $(HDR_FILES)
+	g++ $(CXXFLAGS) $(FLAGS) -c $<
+
+clean:
+	rm -f ASCII_table ascii_table.o toBinary.o
