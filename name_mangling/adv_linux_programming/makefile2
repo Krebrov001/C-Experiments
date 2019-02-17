@@ -1,0 +1,15 @@
+CXX = /usr/bin/g++
+#CXXFLAGS = -Wall -Wextra -Werror -pedantic
+CLEAN = *.o reciprocal
+
+reciprocal: main.o reciprocal.o
+	${CXX} ${CXXFLAGS} -o $@ $^
+
+main.o: main.c reciprocal.hpp
+	gcc ${CXXFLAGS} -c $<
+
+reciprocal.o: reciprocal.cpp reciprocal.hpp
+	${CXX} ${CXXFLAGS} -c $<
+
+clean:
+	rm -rf ${CLEAN}
